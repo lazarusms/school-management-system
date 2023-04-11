@@ -3,22 +3,23 @@ package org.example.student;
 public class Student {
     private String name;
     private int age;
-    private final int id;
-    private static int i = 0;
+    private static int c = 0;
+    private int id;
+
 
 
     public Student(String name, int age){
         this.name = name;
         this.age = age;
-        this.id = i++;
+        this.id = ++c;
     }
     @Override
     public String toString() {
-        return "Conta{" +
-                "Nome='" + name + '\'' +
-                ", Idade=" + age +
-                ", Número da chamada=" + id +
-                '}';
+        return "Aluno: [" +
+                "Nome= '" + name + '\'' +
+                ", Número da chamada= " + id +
+                ", Idade= " + age +
+                ']';
     }
 
     public String getNome() {
@@ -37,4 +38,9 @@ public class Student {
     public void setIdade(int idade) {
         this.age = idade;
     }
+
+    public int getId() {
+        return id;
+    }
+
 }

@@ -21,10 +21,9 @@ public class Main {
                         listStudents();
                         break;
                     case 3:
-
-                      //  break;
+                       removeStudent();
+                       break;
                     case 4:
-
                        // break;
                     case 5:
 
@@ -51,7 +50,7 @@ public class Main {
     }
     private static void listStudents () {
         System.out.println("Contas cadastradas:");
-        var list = s.listarAlunos();
+        var list = s.listStudents();
         list.forEach(System.out::println);
 
         System.out.println("Pressione qualquer tecla e de ENTER para voltar ao menu principal");
@@ -66,9 +65,15 @@ public class Main {
         System.out.println("Digite a idade:");
         var age = keyboard.nextInt();
 
-        s.matricula(new Student(name, age));
+        s.register(new Student(name, age));
 
         System.out.println("Aluno cadastrado");
         keyboard.next();
+    }
+    private static void removeStudent(){
+        System.out.println("Digite o id do estudante que deseja remover:");
+        var id = keyboard.nextInt();
+        s.remove(id);
+        System.out.println("Usuario removido");
     }
 }
