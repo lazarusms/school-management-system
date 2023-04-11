@@ -24,7 +24,8 @@ public class Main {
                        removeStudent();
                        break;
                     case 4:
-                       // break;
+                       insertSchoolGrade();
+                       break;
                     case 5:
 
                        // break;
@@ -38,13 +39,16 @@ public class Main {
     }
     private static int exibirMenu () {
         System.out.println("""
+                    ------------------------------------------------------
                     BEM-VINDO, SELECIONE UMA OPÇÃO:
+                    ------------------------------------------------------
                     1 - Matricular um aluno
                     2 - Listar alunos
                     3 - Encerrar matrícula de um aluno
                     4 - Cadastrar nota de um aluno
                     5 - Listar notas
                     6 - Sair
+                    ------------------------------------------------------
                     """);
         return keyboard.nextInt();
     }
@@ -75,5 +79,13 @@ public class Main {
         var id = keyboard.nextInt();
         s.remove(id);
         System.out.println("Usuario removido");
+    }
+    private static void insertSchoolGrade(){
+        System.out.println("Digite o id do estudante que deseja adicionar uma nota:");
+        var insert = keyboard.nextInt();
+        System.out.println("Digite a nota:");
+        var grade = keyboard.nextInt();
+        s.insertGrade(insert, grade );
+
     }
 }

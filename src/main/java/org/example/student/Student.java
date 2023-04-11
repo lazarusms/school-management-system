@@ -6,7 +6,7 @@ public class Student {
     private static int c = 0;
     private int id;
 
-
+    private int grade;
 
     public Student(String name, int age){
         this.name = name;
@@ -15,10 +15,12 @@ public class Student {
     }
     @Override
     public String toString() {
+
         return "Aluno: [" +
-                "Nome= '" + name + '\'' +
-                ", Número da chamada= " + id +
-                ", Idade= " + age +
+                "Nome = " + name + " " +
+                ", Número da chamada = " + id +
+                ", Idade = " + age +
+                ", Nota = " + grade +
                 ']';
     }
 
@@ -43,4 +45,11 @@ public class Student {
         return id;
     }
 
+    public void setGrade(Integer grade) {
+        this.grade = grade;
+    }
+
+    public int getGrade() {
+        return grade;
+    }
 }

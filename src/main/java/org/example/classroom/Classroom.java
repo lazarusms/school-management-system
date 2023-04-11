@@ -25,6 +25,13 @@ public class Classroom {
 
         }
     }
+    public void insertGrade(Integer id, Integer grade){
+        var stud = findStudent(id);
+        if(stud != null){
+            stud.setGrade(grade);
+        }
+    }
+
 
     private Student findStudent(Integer id) {
         for(Student s : students){
