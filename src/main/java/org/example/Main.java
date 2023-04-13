@@ -87,5 +87,13 @@ public class Main {
         var grade = keyboard.nextInt();
         s.insertGrade(insert, grade );
 
+    }   private static void listing(){
+        System.out.println("Digite o id do estudante que deseja adicionar uma nota:");
+        var insert = keyboard.nextInt();
+        System.out.println("Digite a nota:");
+        var grade = keyboard.nextInt();
+        s.insertGrade(insert, grade );
+
     }
+
 }
