@@ -1,15 +1,12 @@
-package org.example.student;
-
-import org.example.model.Endereco;
-import org.example.model.StudentDataBase;
+package org.example.model;
 
 public class Student {
-    private StudentDataBase studentdata;
+    private final StudentData studentdata;
     private static int c = 0;
-    private int id;
+    private final int id;
     private int grade;
 
-    public Student(StudentDataBase data){
+    public Student(StudentData data){
         this.studentdata = data;
         this.id = ++c;
     }
@@ -22,7 +19,7 @@ public class Student {
                 ", Idade = " + studentdata.age() +
                 ", Telefone = " + studentdata.telefone() +
                 ", CPF = " + studentdata.cpf() +
-                ", Nota = " + getGrade() +
+                ", Media = " + getGrade() +
                 ", Endereco = " + studentdata.endereco().getBairro() +
                 ']';
     }
