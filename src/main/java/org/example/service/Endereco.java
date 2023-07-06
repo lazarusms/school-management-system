@@ -1,4 +1,4 @@
-package org.example.model;
+package org.example.service;
 
 public class Endereco {
     private String cep;

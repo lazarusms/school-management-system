@@ -1,11 +1,11 @@
-package org.example.subjects;
+package org.example.management;
 
 public enum Subjects {
-    PORTUGUES(0),
-    INGLES(0),
-    MATEMATICA(0);
+    PORTUGUES(),
+    INGLES(),
+    MATEMATICA()
 
-    private int grade;
+   /* private int grade;
 
     Subjects(int nota) {}
 
@@ -22,4 +22,6 @@ public enum Subjects {
             System.out.println(subject.name() + " = " + subject.getGrade());
         }
     }
+
+    */
 }

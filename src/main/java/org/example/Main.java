@@ -1,29 +1,33 @@
 package org.example;
 
-import org.example.classRoom.ClassRoom;
+import org.example.management.Management;
+import org.example.students.Student;
 
+import java.util.LinkedHashSet;
 import java.util.Scanner;
+import java.util.Set;
 
 public class Main {
     private static final Scanner keyboard = new Scanner(System.in).useDelimiter("\n");
-    private static final ClassRoom classRoom = new ClassRoom();
+    private static final Management management = new Management();
 
     public static void main(String[] args) {
         var opcao = exibirMenu();
         while (opcao != 6) {
             try {
                 switch (opcao) {
-                    case 1 -> classRoom.register();
-                    case 2 -> classRoom.listStudents();
-                    case 3 -> classRoom.remove();
-                    case 4 -> classRoom.insertGrade();
-                    // case 5 -> list();
+                    case 1 -> management.register();
+                    case 2 -> management.listStudents();
+                    case 3 -> management.remove();
+                    case 4 -> management.insertGrade();
+                    case 5 -> management.listGrades();
                 }
+            } catch (NullPointerException e) {
+            System.out.println("O conjunto de alunos não está inicializado corretamente.");
+            e.printStackTrace();
+        }
 
-            } catch (Exception e) {
-                System.out.println("ss");
-            }
-            opcao = exibirMenu();
+        opcao = exibirMenu();
         }
     }
     private static int exibirMenu () {
