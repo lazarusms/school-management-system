@@ -4,6 +4,7 @@ import org.example.students.Student;
 import org.example.students.StudentData;
 import org.example.service.CepService;
 
+import java.util.HashMap;
 import java.util.LinkedHashSet;
 import java.util.Scanner;
 import java.util.Set;
@@ -11,13 +12,8 @@ import java.util.Set;
 public class Management {
     private final Scanner keyboard = new Scanner(System.in).useDelimiter("\n");
     private final CepService c = new CepService();
-    private Set<Student> students;
-    private Student student;
-
-    public Management() {
-        students = new LinkedHashSet<>();
-    }
-
+    private final Set<Student> students = new LinkedHashSet<>();
+    private final Student student = new Student();
     public void listStudents() {
         if (students.isEmpty()) {
             System.out.println("Não há alunos cadastrados.");
@@ -27,7 +23,6 @@ public class Management {
             }
         }
     }
-
     public void register() {
         System.out.println("Digite o nome do estudante:");
         var name = keyboard.next();
@@ -85,28 +80,26 @@ public class Management {
             case 3 -> subjects = Subjects.MATEMATICA;
         }
         if (stud != null && subjects != null) {
-            student.addGrade(subjects, grades);
-            System.out.println("Nota adicionada com sucesso!");
-            }
-            else {
-                System.out.println("Estudante ou matéria não encontrada");
-            }
+                stud.addGrade(subjects, grades);
+                System.out.println("Nota adicionada com sucesso!");
+        } else {
+            System.out.println("Estudante ou matéria não encontrada");
+        }
     }
 
-    public void listGrades(){
+    public void listGrades() {
         System.out.println("Digite o id do estudante que deseja ver as notas:");
         var id = keyboard.nextInt();
         var stud = findStudent(id);
-        if(stud != null){
-            try{
-                student.listGrades();
-            }
-            catch (Exception e){
+        if (stud != null) {
+            try {
+                stud.listGrades(); // Chamar listGrades() em 'stud' em vez de 'student'
+            } catch (Exception e) {
                 System.out.println("Não há notas");
             }
-
         }
     }
+
     public Student findStudent(Integer id) {
         for(Student s : students){
             if(s.getId() == id){

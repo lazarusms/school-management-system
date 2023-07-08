@@ -19,6 +19,7 @@ public class Student {
     }
     public Student(StudentData data){
         this.studentdata = data;
+        this.grades = new HashMap<>();
         this.id = ++c;
     }
 
@@ -43,6 +44,9 @@ public class Student {
         return average;
     }
 
+    public void setGrades(Map<Subjects, Integer> grades) {
+        this.grades = grades;
+    }
 
     public void addGrade(Subjects subject, int grade){
        grades.put(subject, grade);
